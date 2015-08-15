@@ -5,22 +5,26 @@ class Fizzbuzz
   const FIZZ = 3;
   const BUZZ = 5;
 
-  function exec($num) {
-    for($i = 1; $i < $num; $i++) {
-      if(($i % self::FIZZ == 0) && ($i % self::BUZZ == 0)) {
-        echo "fizzbuzz<br>";
-      } else if($i % self::FIZZ == 0) {
-        echo "fizz<br>";
-      } else if($i % self::BUZZ == 0) {
-        echo "buzz<br>";
-      } else {
-        echo "$i<br>";
-      }
+  function exec($limit_number) {
+    for ($i = 1; $i < $limit_number; $i++) {
+      echo $this->judge($i);
     }
   }
 
+  function judge($num) {
+      if (($num % self::FIZZ === 0) && ($num % self::BUZZ === 0)) {
+        return "fizzbuzz<br>";
+      } 
+      if ($num % self::FIZZ === 0) {
+        return "fizz<br>";
+      } 
+      if ($num % self::BUZZ === 0) {
+        return "buzz<br>";
+      } 
+      return "$num<br>";
+  }
 }
 
 
 $fb = new Fizzbuzz();
-$fb->exec(20);
+$fb->exec(100);
