@@ -1,1 +1,1 @@
-# fizzbuzz_php
+# PHPでFizzBuzz
